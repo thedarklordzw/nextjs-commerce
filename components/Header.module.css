@@ -1,0 +1,85 @@
+.header {
+  background-color: var(--main-color);
+  padding: 4rem;
+  font-family: inherit;
+  color: var(--color-text);
+}
+
+.header__container {
+  display: flex;
+  margin-bottom: 4rem;
+  gap: 5rem;
+  align-items: center;
+}
+
+.header__byline {
+  flex: 0 1 20rem;
+}
+
+.header__search {
+  display: flex;
+}
+
+.header__select {
+  padding: 2rem 3rem;
+  font-family: inherit;
+  outline: none;
+  border: none;
+  background-color: var(--main-color-1);
+  color: var(--color-text);
+}
+
+.header__searchBtn {
+  padding: 2rem 3rem;
+  font-family: inherit;
+  outline: none;
+  border: none;
+  background-color: var(--main-color-1);
+  color: var(--color-text);
+}
+
+.header__searchbar {
+  padding: 1rem;
+  width: 90rem;
+  outline: none;
+  border: none;
+  border-radius: 0;
+}
+
+.header__list {
+  list-style: none;
+  gap: 3.5rem;
+  display: flex;
+}
+
+.header__nav {
+  margin-left: 11rem;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 5rem;
+}
+
+.header__links:link,
+.header__links:visited {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.nav__links:link,
+.nav__links:visited {
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.header__links:hover,
+.header__links:active {
+  color: var(--main-color-1);
+}
+
+.nav__links:hover,
+.nav__links:active {
+  color: var(--main-color-1);
+}
