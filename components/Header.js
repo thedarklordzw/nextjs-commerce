@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import { PersonIcon, MagnifyingGlassIcon } from '@radix-ui/react-icons';
 
 function Header() {
   return (
@@ -29,7 +30,9 @@ function Header() {
             </select>
 
             <input type='text' className={styles.header__searchbar} />
-            <button className={styles.header__searchBtn}>Search</button>
+            <button className={styles.header__searchBtn}>
+              <MagnifyingGlassIcon className={styles.search__icon} />
+            </button>
           </div>
           <div>
             <nav>

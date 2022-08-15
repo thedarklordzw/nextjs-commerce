@@ -22,6 +22,8 @@
 
 .header__select {
   padding: 2rem 3rem;
+  cursor: pointer;
+  border-radius: 0.5rem 0 0 0.5rem;
   font-family: inherit;
   outline: none;
   border: none;
@@ -31,6 +33,8 @@
 
 .header__searchBtn {
   padding: 2rem 3rem;
+  cursor: pointer;
+  border-radius: 0 0.5rem 0.5rem 0;
   font-family: inherit;
   outline: none;
   border: none;
@@ -44,6 +48,10 @@
   outline: none;
   border: none;
   border-radius: 0;
+}
+
+.search__icon {
+  font-size: 20px;
 }
 
 .header__list {
