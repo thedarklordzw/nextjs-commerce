@@ -2,12 +2,9 @@ import React, { useEffect, useState } from 'react';
 import styles from './Main.module.css';
 import Image from 'next/image';
 
-let productData = [
-  {
-    imageUrl:
-      'https://media.takealot.com/b/2/cms/p/1292x300/smart/filters:focal(462x0:854x300)/original_images/12dd3dd8b0ef46a5470c259af73f0262f981d805.png',
-  },
-];
+let productData;
+
+let heroData;
 // const dataIsFilled = productData.length !== 0;
 
 function Main() {
@@ -16,7 +13,11 @@ function Main() {
   useEffect(() => {
     const getProductData = async () => {
       const res = await fetch('http://localhost:8080/api');
-      const data = await res.json();
+      // const data = await res.json();
+      const [data, _data] = await res.json();
+
+      console.log(data);
+      heroData = _data;
 
       // const dataIsFilled = data.length !== 0;
       if (data.length === 0) return;
@@ -41,75 +42,99 @@ function Main() {
         <main className={styles.main}>
           <section className={styles.main__ad}>
             <div className={styles.main__adImage}>
-              <Image src='/images/logo.png' width={854} height={300} />
+              {heroData && (
+                <Image src={heroData.imageUrl} width={1292} height={300} />
+              )}
             </div>
           </section>
           <section className={styles.main__productBox}>
             <article className={styles.main__product}>
-              <Image
-                src={productData[0].imageUrl}
-                width={510}
-                height={735}
-                alt='product image'
-              />
-
-              <span>5 stars</span>
-              <h3>Product Name</h3>
-              <p>
+              <div className={styles.main__imgBox}>
+                <Image
+                  className={styles.main__img}
+                  src={productData[0].imageUrl}
+                  width={185}
+                  height={200}
+                  alt='product image'
+                />
+              </div>
+              <h3 className={styles.main__title}>{productData[0].name}</h3>
+              <p className={styles.main__reviews}>5 stars</p>
+              <p className={styles.main__description}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
                 culpa deserunt maxime animi atque consectetur facere consequatur
                 aliquid voluptatum aspernatur velit tempore cum, vel praesentium
                 inventore. A amet magni tempore.
               </p>
+              <div className={styles.main__buttonBox}>
+                <button className={styles.main__btn}>Add to cart</button>
+              </div>
             </article>
             <article className={styles.main__product}>
-              <Image
-                src={productData[1].imageUrl}
-                width={510}
-                height={735}
-                alt='product image'
-              />
-
-              <span>5 stars</span>
-              <h3>Product Name</h3>
-              <p>
+              <div className={styles.main__imgBox}>
+                <Image
+                  className={styles.main__img}
+                  src={productData[1].imageUrl}
+                  width={185}
+                  height={200}
+                  alt='product image'
+                />
+              </div>
+              <h3 className={styles.main__title}>{productData[1].name}</h3>
+              <p className={styles.main__reviews}>5 stars</p>
+              <p className={styles.main__description}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
                 culpa deserunt maxime animi atque consectetur facere consequatur
                 aliquid voluptatum aspernatur velit tempore cum, vel praesentium
                 inventore. A amet magni tempore.
               </p>
+              <div className={styles.main__buttonBox}>
+                <button className={styles.main__btn}>Add to cart</button>
+              </div>
             </article>
             <article className={styles.main__product}>
-              <Image
-                src={productData[2].imageUrl}
-                width={510}
-                height={735}
-                alt='product image'
-              />
-              <span>5 stars</span>
-              <h3>Product Name</h3>
-              <p>
+              <div className={styles.main__imgBox}>
+                <Image
+                  className={styles.main__img}
+                  src={productData[2].imageUrl}
+                  width={185}
+                  height={200}
+                  alt='product image'
+                />
+              </div>
+              <h3 className={styles.main__title}>{productData[2].name}</h3>
+              <p className={styles.main__reviews}>5 stars</p>
+              <p className={styles.main__description}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
                 culpa deserunt maxime animi atque consectetur facere consequatur
                 aliquid voluptatum aspernatur velit tempore cum, vel praesentium
                 inventore. A amet magni tempore.
               </p>
+              <div className={styles.main__buttonBox}>
+                <button className={styles.main__btn}>Add to cart</button>
+              </div>
             </article>
             <article className={styles.main__product}>
-              <Image
-                src={productData[3].imageUrl}
-                width={510}
-                height={735}
-                alt='product image'
-              />
-              <span>5 stars</span>
-              <h3>Product Name</h3>
-              <p>
+              <div className={styles.main__imgBox}>
+                <Image
+                  className={styles.main__img}
+                  src={productData[3].imageUrl}
+                  width={185}
+                  height={200}
+                  alt='product image'
+                />
+              </div>
+              <h3 className={styles.main__title}>{productData[3].name}</h3>
+              <p className={styles.main__reviews}>5 stars</p>
+              <p className={styles.main__description}>
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odit
                 culpa deserunt maxime animi atque consectetur facere consequatur
                 aliquid voluptatum aspernatur velit tempore cum, vel praesentium
                 inventore. A amet magni tempore.
               </p>
+              <div className={styles.main__buttonBox}>
+                <button className={styles.main__btn}>Add to cart</button>
+              </div>
             </article>
           </section>
         </main>

@@ -1,0 +1,77 @@
+.main {
+  /* padding: 0 4rem; */
+  max-width: 175rem;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+
+.main__ad {
+  margin-bottom: 10rem;
+}
+
+.main__adImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.main__productBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.main__imgBox,
+.main__buttonBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__imgBox {
+  align-items: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.main__product {
+  flex: 0 1 40rem;
+
+  box-shadow: var(--shadow-light);
+  padding: 2rem 4rem;
+}
+
+.main__title {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+}
+
+.main__img {
+  display: inline-block;
+  align-self: center;
+}
+
+.main__reviews {
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.main__description {
+  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
+}
+
+.main__btn {
+  text-transform: uppercase;
+  background-color: var(--main-color-1);
+  color: var(--color-text);
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  border-radius: 100rem;
+  cursor: pointer;
+}
