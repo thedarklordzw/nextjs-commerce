@@ -1,5 +1,5 @@
 {
-  "name": "zim_ecommerce",
+  "name": "phathisa",
   "version": "0.1.0",
   "homepage": ".",
   "private": true,
@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.1.1",
+    "axios": "^1.2.2",
+    "firebase": "^9.15.0",
+    "framer-motion": "^8.4.0",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0"

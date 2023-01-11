@@ -1,8 +1,8 @@
 import React from 'react';
 import Header from './Header';
 import Head from 'next/head';
+import Products from './Products';
 import styles from './Landing.module.css';
-import Main from './Main';
 
 function Landing() {
   return (
@@ -11,7 +11,7 @@ function Landing() {
         <title>Next eCommerce</title>
       </Head>
       <Header />
-      <Main />
+      <Products />
     </React.Fragment>
   );
 }

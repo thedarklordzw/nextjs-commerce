@@ -1,6 +1,7 @@
 .header {
   background-color: var(--main-color);
   padding: 4rem;
+  margin-bottom: 4rem;
   font-family: inherit;
   color: var(--color-text);
 }
@@ -43,6 +44,7 @@
 }
 
 .header__searchbar {
+  font-family: inherit;
   padding: 1rem;
   width: 90rem;
   outline: none;

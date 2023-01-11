@@ -1,0 +1,24 @@
+.products {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+}
+
+.item {
+  box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  padding: 2rem 4rem 8rem 4rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  /* max-width: 90vw; */
+}
+
+.on-sale {
+  margin-bottom: 4rem;
+}

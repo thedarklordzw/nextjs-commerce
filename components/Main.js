@@ -12,7 +12,7 @@ function Main() {
 
   useEffect(() => {
     const getProductData = async () => {
-      const res = await fetch('http://localhost:8080/api');
+      const res = await fetch('http://localhost:3000/api');
       // const data = await res.json();
       const [data, _data] = await res.json();
 
