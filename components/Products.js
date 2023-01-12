@@ -49,7 +49,7 @@ const Products = () => {
                 <ul className={styles.products}>
                   {data.trending.map(product => (
                     <motion.li
-                      whileHover={{ scale: 1.3 }}
+                      whileHover={{ scale: 1.2 }}
                       className={styles.item}
                     >
                       {product.item}
@@ -62,7 +62,7 @@ const Products = () => {
                 <ul className={styles.products}>
                   {data.onSale.map(product => (
                     <motion.li
-                      whileHover={{ scale: 1.3 }}
+                      whileHover={{ scale: 1.2 }}
                       className={styles.item}
                     >
                       {product.item}

@@ -8,9 +8,8 @@ function Landing() {
   return (
     <React.Fragment>
       <Head>
-        <title>Next eCommerce</title>
+        <title>Phathisa | Your favourite shop to get the cheapest goods</title>
       </Head>
-      <Header />
       <Products />
     </React.Fragment>
   );
