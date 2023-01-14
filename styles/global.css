@@ -28,3 +28,8 @@ body {
   margin-bottom: 2rem;
   font-weight: 400;
 }
+
+.flex {
+  display: flex;
+  gap: 2rem;
+}

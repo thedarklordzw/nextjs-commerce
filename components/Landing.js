@@ -3,6 +3,7 @@ import Header from './Header';
 import Head from 'next/head';
 import Products from './Products';
 import styles from './Landing.module.css';
+import Sidebar from './Sidebar';
 
 function Landing() {
   return (
@@ -10,7 +11,10 @@ function Landing() {
       <Head>
         <title>Phathisa | Your favourite shop to get the cheapest goods</title>
       </Head>
-      <Products />
+      <div className='flex'>
+        <Sidebar />
+        <Products />
+      </div>
     </React.Fragment>
   );
 }

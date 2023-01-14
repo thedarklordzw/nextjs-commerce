@@ -38,7 +38,7 @@ const Products = () => {
   }, []);
 
   return (
-    <>
+    <div>
       <Card />
       <main className={styles.main}>
         <section>
@@ -74,7 +74,7 @@ const Products = () => {
           )}
         </section>
       </main>
-    </>
+    </div>
   );
 };
 
