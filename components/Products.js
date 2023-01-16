@@ -8,6 +8,8 @@ import { motion } from 'framer-motion';
 
 const Products = () => {
   const [data, setData] = useState('');
+  const [error, setError] = useState(false);
+
   const firebaseConfig = {
     apiKey: 'AIzaSyBxSHrV27jbVguscEki_YSHkDxxULgSS0o',
     authDomain: 'nextjs-2e2d9.firebaseapp.com',
@@ -28,6 +30,7 @@ const Products = () => {
           if (snapshot.exists()) {
             setData(snapshot.val());
           } else {
+            setError(true);
             throw new Error('No data available, try again');
           }
         })
@@ -57,7 +60,7 @@ const Products = () => {
                   ))}
                 </ul>
               </section>
-              <section className={styles['on-sale']}>
+              <section className={styles['on-sale-2']}>
                 <h2 className='heading-secondary'>On Sale</h2>
                 <ul className={styles.products}>
                   {data.onSale.map(product => (

@@ -1,5 +1,5 @@
 .header {
-  background-color: var(--main-color);
+  background-color: var(--main-color-1);
   padding: 4rem;
   margin-bottom: 4rem;
   font-family: inherit;
@@ -28,7 +28,7 @@
   font-family: inherit;
   outline: none;
   border: none;
-  background-color: var(--main-color-1);
+  background-color: var(--main-color);
   color: var(--color-text);
 }
 
@@ -39,7 +39,7 @@
   font-family: inherit;
   outline: none;
   border: none;
-  background-color: var(--main-color-1);
+  background-color: var(--main-color);
   color: var(--color-text);
 }
 
