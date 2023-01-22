@@ -2,13 +2,21 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import styles from './Products.module.css';
 import Card from './Card';
+import Link from 'next/link';
 import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, child, get } from 'firebase/database';
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { getStorage, ref } from 'firebase/storage';
 
 const Products = () => {
   const [data, setData] = useState('');
   const [error, setError] = useState(false);
+  const [images, setImages] = useState('');
+
+  const [trending, setTrending] = useState('');
+  const [onSale, setOnSale] = useState('');
+  const [forSale, setForSale] = useState('');
 
   const firebaseConfig = {
     apiKey: 'AIzaSyBxSHrV27jbVguscEki_YSHkDxxULgSS0o',
@@ -21,23 +29,25 @@ const Products = () => {
   };
 
   const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+  const storage = getStorage(app);
 
   useEffect(() => {
-    const getDB = () => {
-      const dbRef = ref(getDatabase());
-      get(child(dbRef, `inStock`))
-        .then(snapshot => {
-          if (snapshot.exists()) {
-            setData(snapshot.val());
-          } else {
-            setError(true);
-            throw new Error('No data available, try again');
-          }
-        })
-        .catch(error => console.log(error));
+    const getData = async () => {
+      const querySnapshot = await getDocs(collection(db, 'stock'));
+      querySnapshot.forEach(doc => {
+        const { trending, onSale, forSale } = doc.data();
+
+        setData(doc.data());
+        setTrending(trending);
+        setForSale(forSale);
+        setOnSale(onSale);
+
+        console.dir(`${doc.id} => ${doc.data()}`);
+      });
     };
 
-    getDB();
+    getData();
   }, []);
 
   return (
@@ -50,12 +60,16 @@ const Products = () => {
               <section className={styles['on-sale']}>
                 <h2 className='heading-secondary'>Trending Items</h2>
                 <ul className={styles.products}>
-                  {data.trending.map(product => (
-                    <motion.li
-                      whileHover={{ scale: 1.2 }}
-                      className={styles.item}
-                    >
-                      {product.item}
+                  {trending.map(product => (
+                    <motion.li key={product.id} className={styles.item}>
+                      <article className={styles.product}>
+                        <Image src={product.image} height={300} width={300} />
+                        <p className={styles.price}>
+                          <span>{product.item}</span>
+                          <span>{product.price}</span>
+                        </p>
+                        <button className={styles.order}>Add to Cart</button>
+                      </article>
                     </motion.li>
                   ))}
                 </ul>
@@ -63,12 +77,16 @@ const Products = () => {
               <section className={styles['on-sale-2']}>
                 <h2 className='heading-secondary'>On Sale</h2>
                 <ul className={styles.products}>
-                  {data.onSale.map(product => (
-                    <motion.li
-                      whileHover={{ scale: 1.2 }}
-                      className={styles.item}
-                    >
-                      {product.item}
+                  {onSale.map(product => (
+                    <motion.li key={product.id} className={styles.item}>
+                      <article className={styles.product}>
+                        <Image src={product.image} height={300} width={300} />
+                        <p className={styles.price}>
+                          <span>{product.item}</span>
+                          <span>{product.price}</span>
+                        </p>
+                        <button className={styles.order}>Add to Cart</button>
+                      </article>
                     </motion.li>
                   ))}
                 </ul>

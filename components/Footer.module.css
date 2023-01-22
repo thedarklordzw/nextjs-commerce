@@ -1,8 +1,9 @@
 .footer {
-  background-color: var(--main-color-1);
+  background-color: var(--main-color);
   display: flex;
   justify-content: space-between;
   padding: 8rem;
-  color: #fff;
+  color: var(--color-text);
   margin-top: 8rem;
+  margin-bottom: 0;
 }

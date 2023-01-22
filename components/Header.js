@@ -1,4 +1,5 @@
 import React from 'react';
+import PhathisaLogo from './icons/Logo';
 import styles from './Header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -10,12 +11,7 @@ function Header() {
       <header className={styles.header}>
         <section className={styles.header__container}>
           <div>
-            <Image
-              alt='Company logo'
-              src='/images/logo.png'
-              width={60}
-              height={60}
-            />
+            <PhathisaLogo />
           </div>
           <div className={styles.header__byline}>
             <span>Same day delivery on some orders.</span>

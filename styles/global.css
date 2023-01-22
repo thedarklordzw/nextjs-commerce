@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@200;300;400;500;600;700;800&display=swap');
 
 :root {
-  --main-color: #2a6c8c;
-  --main-color-1: #144466;
+  --main-color: #ddf2fd;
+  --main-color-1: #6cb3d9;
+  --main-color-2: #3d9bcc;
   --shadow-light: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
-  --color-text: #f2f2f2;
+  --color-text: #1f2426;
 }
 
 *,
