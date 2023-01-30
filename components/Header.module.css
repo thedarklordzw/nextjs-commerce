@@ -89,10 +89,10 @@
 
 .header__links:hover,
 .header__links:active {
-  color: var(--main-color-1);
+  color: var(--color-text-darker);
 }
 
 .nav__links:hover,
 .nav__links:active {
-  color: var(--main-color-1);
+  color: var(--color-text-darker);
 }

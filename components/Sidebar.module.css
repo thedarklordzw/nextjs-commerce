@@ -1,6 +1,6 @@
 .sidebar {
-  background-color: var(--main-color-1);
+  border: 0.1rem solid #ddd;
   border-radius: 0.25rem;
-  color: #fff;
+  color: var(--color-text);
   flex: 0 1 20%;
 }
