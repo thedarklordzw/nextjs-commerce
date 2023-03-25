@@ -1,0 +1,7 @@
+.clock {
+  padding: 20px 40px;
+  border: 1px solid currentColor;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+}
